@@ -31,7 +31,7 @@ This repository holds the programs I wrote as part of Harvard University's [CS50
 
 | Number                                            | Name(s)              | Libraries Used |
 | :-----------------------------------------------: | ---------------------| :------------: |
-| [0](https://cs50.harvard.edu/ai/2020/projects/0/) | Degrees, Tic-Tac-Toe |                |
+| [0](https://cs50.harvard.edu/ai/2020/projects/0/) | [Degrees](https://replit.com/@DanielTsiang/degrees), [Tic-Tac-Toe AI](https://replit.com/@DanielTsiang/tic-tac-toe) | Python with Pygame |
 | [1](https://cs50.harvard.edu/ai/2020/projects/1/) | Knights, Minesweeper |                |
 | [2](https://cs50.harvard.edu/ai/2020/projects/2/) | PageRank, Heredity   |                |
 | [3](https://cs50.harvard.edu/ai/2020/projects/3/) | Crossword            |                |

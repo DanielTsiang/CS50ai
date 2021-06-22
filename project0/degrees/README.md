@@ -12,5 +12,19 @@ A program that determines how many “degrees of separation” apart two actors 
 2. Click the green button to run the demo code. Or run ```python degrees.py large``` to load the large data set.
 3. Enter the name of two actors, e.g. Tom Cruise and Tom Hanks.
 
+### Example
+Example with the large data set loaded:
+```
+$ python degrees.py large
+Loading data...
+Data loaded.
+Name 1: Emma Watson
+Name 2: Jennifer Lawrence
+3 degrees of separation.
+1: Emma Watson and Brendan Gleeson starred in Harry Potter and the Order of the Phoenix
+2: Brendan Gleeson and Michael Fassbender starred in Trespass Against Us
+3: Michael Fassbender and Jennifer Lawrence starred in X-Men: First Class
+```
+
 ### Technologies Used
 * Python

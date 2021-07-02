@@ -1,4 +1,4 @@
-# "Knights and Knaves" Puzzles
+# "Knights and Knaves" Logic Puzzles
 
 ### Description
 A program that solves logic puzzles. The puzzles are represented using propositional logic, enabling the AI to solve them using a model-checking algorithm.
@@ -14,7 +14,7 @@ The objective of the puzzle is, given a set of sentences spoken by each of the c
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/knights).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/logic-puzzles).
 2. Click the green button to run the demo code. Or run ```python puzzle.py```.
 3. View the answers in the terminal.
 

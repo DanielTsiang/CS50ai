@@ -14,7 +14,9 @@ The objective of the puzzle is, given a set of sentences spoken by each of the c
 </p>
 
 ### Getting Started
-1. Run ```python puzzle.py``` to solve the puzzles and view the answers in the terminal.
+1. Visit a demo [here](https://replit.com/@DanielTsiang/knights).
+2. Click the green button to run the demo code. Or run ```python puzzle.py```.
+3. View the answers in the terminal.
 
 ### Puzzles
 * Puzzle 0 contains a single character, A.

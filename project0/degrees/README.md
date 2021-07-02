@@ -8,7 +8,7 @@ A program that determines how many “degrees of separation” apart two actors 
 </p>
 
 ### Getting Started
-1. Visit a demo using the small data set here [here](https://replit.com/@DanielTsiang/degrees). To use the large data set, run the code on your local computer.
+1. Visit a demo using the small data set [here](https://replit.com/@DanielTsiang/degrees). To use the large data set, run the code on your local computer.
 2. Click the green button to run the demo code. Or run ```python degrees.py large``` to load the large data set.
 3. Enter the name of two actors, e.g. Tom Cruise and Tom Hanks.
 

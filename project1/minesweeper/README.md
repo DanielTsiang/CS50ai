@@ -9,7 +9,7 @@ Knowledge is represented as a logical sentence with two parts: a set of cells on
 1. Visit a demo [here](https://replit.com/@DanielTsiang/minesweeper).
 2. Click the green button to run the demo code. Or run ```python runner.py```.
 3. Click once, or hold down the click button, on the "AI Move" button for the AI to make one or multiple moves respectively.
-4. As the game progresses, information such as detected mines are displayed in the terminal. The player can intervene manually, e.g. right-click onto the cell to display the flag icon but this is optional.
+4. As the game progresses, information such as detected mines is displayed in the terminal. The player can intervene manually, e.g. right-click onto the cell to display the flag icon but this is optional.
 5. If the game is won, all of the flag icons will automatically be displayed.
 6. If the game is lost, i.e. because a bomb was clicked on, all of the bomb icons will automatically be displayed.
 7. Click the reset button to reset the board and play another game.

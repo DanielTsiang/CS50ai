@@ -29,12 +29,12 @@ This repository holds the programs I wrote as part of Harvard University's [CS50
 
 ### Projects
 
-| Number                                            | Name(s)              | Libraries Used |
-| :-----------------------------------------------: | ---------------------| :------------: |
+| Number                                            | Name(s)              | Technologies Used |
+| :-----------------------------------------------: | ---------------------| :---------------: |
 | [0](https://cs50.harvard.edu/ai/2020/projects/0/) | [Degrees of Separation](https://replit.com/@DanielTsiang/degrees), [Tic-Tac-Toe AI](https://replit.com/@DanielTsiang/tic-tac-toe) | Python with Pygame |
 | [1](https://cs50.harvard.edu/ai/2020/projects/1/) | [Knights & Knaves Logic Puzzles](https://replit.com/@DanielTsiang/logic-puzzles), [Minesweeper AI](https://replit.com/@DanielTsiang/minesweeper) | Python with Pygame |
-| [2](https://cs50.harvard.edu/ai/2020/projects/2/) | [PageRank](https://replit.com/@DanielTsiang/pagerank), Heredity   | Python         |
-| [3](https://cs50.harvard.edu/ai/2020/projects/3/) | Crossword            |                |
-| [4](https://cs50.harvard.edu/ai/2020/projects/4/) | Shopping, Nim        |                |
-| [5](https://cs50.harvard.edu/ai/2020/projects/5/) | Traffic              |                |
-| [6](https://cs50.harvard.edu/ai/2020/projects/6/) | Parser, Questions    |                |
+| [2](https://cs50.harvard.edu/ai/2020/projects/2/) | [PageRank](https://replit.com/@DanielTsiang/pagerank), Heredity   | Python |
+| [3](https://cs50.harvard.edu/ai/2020/projects/3/) | Crossword            |                   |
+| [4](https://cs50.harvard.edu/ai/2020/projects/4/) | Shopping, Nim        |                   |
+| [5](https://cs50.harvard.edu/ai/2020/projects/5/) | Traffic              |                   |
+| [6](https://cs50.harvard.edu/ai/2020/projects/6/) | Parser, Questions    |                   |

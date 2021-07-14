@@ -124,6 +124,7 @@ def utility(board):
 
 
 def max_value(board, alpha=float("-inf"), beta=float("inf")):
+    best_move = None
     value = float("-inf")
 
     if terminal(board):
@@ -134,13 +135,14 @@ def max_value(board, alpha=float("-inf"), beta=float("inf")):
         if temp_max > value:
             value = temp_max
             best_move = action
-        alpha = max(alpha, value)
+        alpha = max(alpha, temp_max)
         if beta <= alpha:
             break
     return value, best_move
 
 
 def min_value(board, alpha=float("-inf"), beta=float("inf")):
+    best_move = None
     value = float("inf")
 
     if terminal(board):
@@ -151,7 +153,7 @@ def min_value(board, alpha=float("-inf"), beta=float("inf")):
         if temp_min < value:
             value = temp_min
             best_move = action
-        beta = min(beta, value)
+        beta = min(beta, temp_min)
         if beta <= alpha:
             break
     return value, best_move

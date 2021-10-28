@@ -1,4 +1,4 @@
-# Minesweeper AI
+# Nim
 
 ### Description
 An AI that teaches itself to play Nim through reinforcement learning.

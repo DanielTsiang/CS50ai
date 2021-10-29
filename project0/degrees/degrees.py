@@ -90,6 +90,13 @@ def main():
                 person2 = people[path[i + 1][1]]["name"]
                 movie = movies[path[i + 1][0]]["title"]
                 print(f"{i + 1}: {person1} and {person2} starred in {movie}")
+        
+        i = input("Search again? [Y/n]: ")
+        if i.lower() in ["n", "no"]:
+            break
+        print("\nSearching again:")
+        
+    print("Exiting application. Thanks for searching!")
 
 
 def shortest_path(source, target):

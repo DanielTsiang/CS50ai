@@ -38,7 +38,7 @@ class Test(unittest.TestCase):
             # Mock `sys.argv` using `patch.object()`
             with patch.object(sys, "argv", [__name__, corpus]):
                 crawled_corpus = crawl(corpus)
-                ranks = iterate_pagerank(crawled_corpus, DAMPING)
+                ranks = iterate_pagerank(crawled_corpus, DAMPING)[0]
                 for page in sorted(ranks):
                     with self.subTest(corpus=corpus, page=page):
                         expected = self.corpuses[corpus][page]

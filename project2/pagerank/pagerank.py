@@ -15,7 +15,8 @@ def main():
     print(f"PageRank Results from Sampling (n = {SAMPLES})")
     for page in sorted(ranks):
         print(f"  {page}: {ranks[page]:.4f}")
-    ranks = iterate_pagerank(corpus, DAMPING)
+    ranks, iterations = iterate_pagerank(corpus, DAMPING)
+    print(f"\nPageRank values stable after {iterations} iterations.")
     print("PageRank Results from Iteration")
     for page in sorted(ranks):
         print(f"  {page}: {ranks[page]:.4f}")
@@ -165,11 +166,10 @@ def iterate_pagerank(corpus, damping_factor):
     # normalise values
     page_rank_sum = sum(page_rank.values())
     normalised_page_rank = {key: value/page_rank_sum for key, value in page_rank.items()}
-    print(f"\nPageRank values stable after {iterations} iterations.")
     normalised_page_rank_sum = round(sum(normalised_page_rank.values()), 4)
     assert normalised_page_rank_sum == 1, f"Probabilities in iterate_pagerank function adds up to " \
                                           f"{normalised_page_rank_sum} and not 1."
-    return normalised_page_rank
+    return normalised_page_rank, iterations
 
 
 if __name__ == "__main__":

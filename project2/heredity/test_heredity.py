@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
 
     def test_heredity(self):
         for family in self.families:
-            # Substitute `sys.argv` using `patch.object()`
+            # Mock `sys.argv` using `patch.object()`
             with patch.object(sys, "argv", [__name__, family]):
                 probabilities = find_probabilities()[0]
                 for person in probabilities:

@@ -13,7 +13,7 @@ An AI that assesses the likelihood that a person will have a particular genetic 
 1. Visit a demo [here](https://replit.com/@DanielTsiang/heredity).
 2. Click the green button to run the demo code for the ```family0``` data set.
 3. Alternatively run ```python heredity.py data/family1.csv``` or ```python heredity.py data/family2.csv``` to calculate the genetic probabilities for other data sets.
-4. A unit test for the ```family0``` data set can be run via ```python test0.py data/family0.csv```.
+4. Unit tests for all 3 data sets can be run via ```python test_heredity.py```.
 
 ### Example
 Example with the ```family0``` data set:

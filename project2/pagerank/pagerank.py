@@ -16,7 +16,7 @@ def main():
     for page in sorted(ranks):
         print(f"  {page}: {ranks[page]:.4f}")
     ranks = iterate_pagerank(corpus, DAMPING)
-    print(f"PageRank Results from Iteration")
+    print("PageRank Results from Iteration")
     for page in sorted(ranks):
         print(f"  {page}: {ranks[page]:.4f}")
 
@@ -35,7 +35,7 @@ def crawl(directory):
             continue
         with open(os.path.join(directory, filename)) as f:
             contents = f.read()
-            links = re.findall(r"<a\s+(?:[^>]*?)href=\"([^\"]*)\"", contents)
+            links = re.findall(r"<a\s+[^>]*?href=\"([^\"]*)\"", contents)
             pages[filename] = set(links) - {filename}
 
     # Only include links to other pages in the corpus
@@ -57,17 +57,19 @@ def transition_model(corpus, page, damping_factor):
     num_pages = len(corpus)
     num_links = len(corpus[page])
     if num_links:
-        # With probability damping_factor, the random surfer randomly chooses one of the links from page with equal probability
+        # With probability damping_factor, the random surfer randomly chooses
+        # one of the links from page with equal probability
         random_surfer = {page: damping_factor / num_links for page in corpus[page]}
 
-        # With probability 1 - damping_factor, the random surfer randomly chooses one of all pages in the corpus with equal probability
+        # With probability 1 - damping_factor, the random surfer randomly chooses
+        # one of all pages in the corpus with equal probability
         for page in corpus:
             if page in random_surfer:
                 random_surfer[page] += (1 - damping_factor) / num_pages
             else:
                 random_surfer[page] = (1 - damping_factor) / num_pages
 
-     # If page has no outgoing links, then transition_model chooses randomly among all pages with equal probability.
+    # If page has no outgoing links, then transition_model chooses randomly among all pages with equal probability.
     else:
         random_surfer = {page: 1 / num_pages for page in corpus}
 
@@ -165,7 +167,8 @@ def iterate_pagerank(corpus, damping_factor):
     normalised_page_rank = {key: value/page_rank_sum for key, value in page_rank.items()}
     print(f"\nPageRank values stable after {iterations} iterations.")
     normalised_page_rank_sum = round(sum(normalised_page_rank.values()), 4)
-    assert normalised_page_rank_sum == 1, f"Probabilities in iterate_pagerank function adds up to {normalised_page_rank_sum} and not 1."
+    assert normalised_page_rank_sum == 1, f"Probabilities in iterate_pagerank function adds up to " \
+                                          f"{normalised_page_rank_sum} and not 1."
     return normalised_page_rank
 
 

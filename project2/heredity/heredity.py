@@ -38,7 +38,22 @@ PROBS = {
 
 
 def main():
+    probabilities, people = find_probabilities()
 
+    # Print results
+    for person in people:
+        print(f"{person}:")
+        for field in probabilities[person]:
+            print(f"  {field.capitalize()}:")
+            for value in probabilities[person][field]:
+                p = probabilities[person][field][value]
+                print(f"    {value}: {p:.4f}")
+
+
+def find_probabilities():
+    """
+    Load data into dictionary and then find probability distribution.
+    """
     # Check for proper usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python heredity.py data.csv")
@@ -77,7 +92,6 @@ def main():
         # Loop over all sets of people who might have the gene
         for one_gene in powerset(names):
             for two_genes in powerset(names - one_gene):
-
                 # Update probabilities with new joint probability
                 p = joint_probability(people, one_gene, two_genes, have_trait)
                 update(probabilities, one_gene, two_genes, have_trait, p)
@@ -85,16 +99,7 @@ def main():
     # Ensure probabilities sum to 1
     normalize(probabilities)
 
-    # Print results
-    for person in people:
-        print(f"{person}:")
-        for field in probabilities[person]:
-            print(f"  {field.capitalize()}:")
-            for value in probabilities[person][field]:
-                p = probabilities[person][field][value]
-                print(f"    {value}: {p:.4f}")
-
-    return probabilities
+    return probabilities, people
 
 
 def load_data(filename):
@@ -143,8 +148,6 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone not in set` have_trait` does not have the trait.
     """
     # initialise variables
-    gene_prob = 0
-    trait_prob = 0
     combined_prob = 1
 
     for person in people:
@@ -171,14 +174,14 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
             # compute probabilities of getting gene from each parent
             for parent in parent_probs:
-                # if parent has 2 copies of gene, then the chance of passing it onto child is 1 - probability of mutation,
+                # if parent has 2 copies of gene, then chance of passing it onto child is 1 - probability of mutation,
                 # i.e. if parent has 2 copies of gene, the only way they won't pass it on is via mutation.
                 if parent in two_genes:
                     parent_probs[parent] = 1 - PROBS["mutation"]
                 # if parent has 1 copy of gene, 50/50 chance of whether they pass it on
                 elif parent in one_gene:
                     parent_probs[parent] = 0.5
-                # else parent has no copy of gene, then the chance of passing it onto child is due to gene mutation probability
+                # else parent has no copy of gene, chance of passing it onto child is due to gene mutation probability
                 else:
                     parent_probs[parent] = PROBS["mutation"]
 
@@ -187,7 +190,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 copies = 2
                 gene_prob = parent_probs[mother] * parent_probs[father]
 
-            # probability person gets 1 copy of gene is probability of getting it from one parent but not the other, there are 2 combinations for this
+            # probability person gets 1 copy of gene is probability of getting it from one parent but not the other,
+            # there are 2 combinations for this
             elif person in one_gene:
                 copies = 1
                 prob1 = parent_probs[mother] * (1 - parent_probs[father])
@@ -245,7 +249,8 @@ def normalize(probabilities):
 
         # normalize trait distribution
         trait_sum = sum(probabilities[person]["trait"].values())
-        probabilities[person]["trait"] = {key: value / trait_sum for key, value in probabilities[person]["trait"].items()}
+        probabilities[person]["trait"] = {key: value / trait_sum
+                                          for key, value in probabilities[person]["trait"].items()}
 
 
 if __name__ == "__main__":

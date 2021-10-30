@@ -1,6 +1,7 @@
+import sys
 import unittest
 from unittest.mock import patch
-import sys
+from pathlib import Path
 
 from pagerank import crawl, sample_pagerank, iterate_pagerank, DAMPING, SAMPLES
 from test_resources.expected_results import corpus0, corpus1, corpus2
@@ -23,7 +24,7 @@ class Test(unittest.TestCase):
     def test_sample(self):
         for corpus in self.corpuses:
             # Mock `sys.argv` using `patch.object()`
-            with patch.object(sys, "argv", [__name__, corpus]):
+            with patch.object(sys, "argv", [Path(__file__).name, corpus]):
                 crawled_corpus = crawl(corpus)
                 ranks = sample_pagerank(crawled_corpus, DAMPING, SAMPLES)
                 for page in sorted(ranks):
@@ -36,7 +37,7 @@ class Test(unittest.TestCase):
     def test_iterate(self):
         for corpus in self.corpuses:
             # Mock `sys.argv` using `patch.object()`
-            with patch.object(sys, "argv", [__name__, corpus]):
+            with patch.object(sys, "argv", [Path(__file__).name, corpus]):
                 crawled_corpus = crawl(corpus)
                 ranks = iterate_pagerank(crawled_corpus, DAMPING)[0]
                 for page in sorted(ranks):

@@ -1,6 +1,7 @@
+import sys
 import unittest
 from unittest.mock import patch
-import sys
+from pathlib import Path
 
 from heredity import find_probabilities
 from test_resources.expected_results import family0, family1, family2
@@ -22,7 +23,7 @@ class Test(unittest.TestCase):
     def test_heredity(self):
         for family in self.families:
             # Mock `sys.argv` using `patch.object()`
-            with patch.object(sys, "argv", [__name__, family]):
+            with patch.object(sys, "argv", [Path(__file__).name, family]):
                 probabilities = find_probabilities()[0]
                 for person in probabilities:
                     for field in probabilities[person]:

@@ -14,6 +14,16 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python shopping.py data")
 
+    y_test, predictions, sensitivity, specificity = find_predictions()
+
+    # Print results
+    print(f"Correct: {sum(i == j for i, j in zip(y_test, predictions))}")
+    print(f"Incorrect: {sum(i != j for i, j in zip(y_test, predictions))}")
+    print(f"True Positive Rate: {100 * sensitivity:.2f}%")
+    print(f"True Negative Rate: {100 * specificity:.2f}%")
+
+
+def find_predictions():
     # Load data from spreadsheet and split into train and test sets
     evidence, labels = load_data(sys.argv[1])
     X_train, X_test, y_train, y_test = train_test_split(
@@ -25,11 +35,7 @@ def main():
     predictions = model.predict(X_test)
     sensitivity, specificity = evaluate(y_test, predictions)
 
-    # Print results
-    print(f"Correct: {(y_test == predictions).sum()}")
-    print(f"Incorrect: {(y_test != predictions).sum()}")
-    print(f"True Positive Rate: {100 * sensitivity:.2f}%")
-    print(f"True Negative Rate: {100 * specificity:.2f}%")
+    return y_test, predictions, sensitivity, specificity
 
 
 def load_data(filename):

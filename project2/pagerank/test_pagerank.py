@@ -9,8 +9,8 @@ from test_resources.expected_results import corpus0, corpus1, corpus2
 
 class Test(unittest.TestCase):
     """
-    Unit test for 3 sets of family data.
-    Usage: python test_heredity.py
+    Unit test for 3 sets of corpus data.
+    Usage: python test_pagerank.py
     """
 
     @classmethod

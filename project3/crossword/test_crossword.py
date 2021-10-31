@@ -9,8 +9,8 @@ from test_resources.expected_results import data1
 
 class Test(unittest.TestCase):
     """
-    Unit test for structure1 and words1 data set.
-    Usage: python generate.py
+    Unit test for generating crosswords.
+    Usage: python test_crossword.py
     """
 
     def setUp(self):

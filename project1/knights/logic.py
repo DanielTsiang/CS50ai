@@ -1,7 +1,4 @@
-import itertools
-
-
-class Sentence():
+class Sentence(object):
 
     def evaluate(self, model):
         """Evaluates the logical sentence."""
@@ -108,9 +105,7 @@ class And(Sentence):
         )
 
     def __repr__(self):
-        conjunctions = ", ".join(
-            [str(conjunct) for conjunct in self.conjuncts]
-        )
+        conjunctions = ", ".join(str(conjunct) for conjunct in self.conjuncts)
         return f"And({conjunctions})"
 
     def add(self, conjunct):
@@ -123,8 +118,7 @@ class And(Sentence):
     def formula(self):
         if len(self.conjuncts) == 1:
             return self.conjuncts[0].formula()
-        return " ∧ ".join([Sentence.parenthesize(conjunct.formula())
-                           for conjunct in self.conjuncts])
+        return " ∧ ".join(Sentence.parenthesize(conjunct.formula()) for conjunct in self.conjuncts)
 
     def symbols(self):
         return set.union(*[conjunct.symbols() for conjunct in self.conjuncts])
@@ -145,7 +139,7 @@ class Or(Sentence):
         )
 
     def __repr__(self):
-        disjuncts = ", ".join([str(disjunct) for disjunct in self.disjuncts])
+        disjuncts = ", ".join(str(disjunct) for disjunct in self.disjuncts)
         return f"Or({disjuncts})"
 
     def evaluate(self, model):
@@ -154,8 +148,7 @@ class Or(Sentence):
     def formula(self):
         if len(self.disjuncts) == 1:
             return self.disjuncts[0].formula()
-        return " ∨  ".join([Sentence.parenthesize(disjunct.formula())
-                            for disjunct in self.disjuncts])
+        return " ∨  ".join(Sentence.parenthesize(disjunct.formula()) for disjunct in self.disjuncts)
 
     def symbols(self):
         return set.union(*[disjunct.symbols() for disjunct in self.disjuncts])

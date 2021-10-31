@@ -4,7 +4,7 @@ from collections import deque
 from crossword import *
 
 
-class CrosswordCreator():
+class CrosswordCreator(object):
 
     def __init__(self, crossword):
         """
@@ -53,7 +53,7 @@ class CrosswordCreator():
                 string += letters[i][j] if self.crossword.structure[i][j] else "█"
             string += "\n"
         return string
-    
+
     def save(self, assignment, filename):
         """
         Save crossword assignment to an image file.
@@ -331,12 +331,7 @@ class CrosswordCreator():
         return None
 
 
-def main():
-
-    # Check usage
-    if len(sys.argv) not in [3, 4]:
-        sys.exit("Usage: python generate.py structure words [output]")
-
+def generate_crossword():
     # Parse command-line arguments
     structure = sys.argv[1]
     words = sys.argv[2]
@@ -347,6 +342,16 @@ def main():
     creator = CrosswordCreator(crossword)
     assignment = creator.solve()
 
+    return creator, assignment, output
+
+
+def main():
+    # Check usage
+    if len(sys.argv) not in [3, 4]:
+        sys.exit("Usage: python generate.py structure words [output]")
+
+    creator, assignment, output = generate_crossword()
+
     # Print result
     if assignment is None:
         print("No solution.")
@@ -355,6 +360,7 @@ def main():
         if output:
             creator.save(assignment, output)
         return creator.string(assignment)
+
 
 if __name__ == "__main__":
     main()

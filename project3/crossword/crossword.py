@@ -1,4 +1,4 @@
-class Variable():
+class Variable(object):
 
     ACROSS = "across"
     DOWN = "down"
@@ -35,7 +35,7 @@ class Variable():
         return f"Variable({self.i}, {self.j}, {direction}, {self.length})"
 
 
-class Crossword():
+class Crossword(object):
 
     def __init__(self, structure_file, words_file):
 
@@ -49,12 +49,10 @@ class Crossword():
             for i in range(self.height):
                 row = []
                 for j in range(self.width):
-                    if j >= len(contents[i]):
+                    if j >= len(contents[i]) or contents[i][j] != "_":
                         row.append(False)
-                    elif contents[i][j] == "_":
-                        row.append(True)
                     else:
-                        row.append(False)
+                        row.append(True)
                 self.structure.append(row)
 
         # Save vocabulary list

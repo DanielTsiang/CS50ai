@@ -1,11 +1,10 @@
-import math
 import random
 import time
 
 
-class Nim():
+class Nim(object):
 
-    def __init__(self, initial=[1, 3, 5, 7]):
+    def __init__(self, initial=None):
         """
         Initialize game board.
         Each game board has
@@ -13,6 +12,8 @@ class Nim():
             - `player`: 0 or 1 to indicate which player's turn
             - `winner`: None, 0, or 1 to indicate who the winner is
         """
+        if initial is None:
+            initial = [1, 3, 5, 7]
         self.piles = initial.copy()
         self.player = 0
         self.winner = None
@@ -70,7 +71,7 @@ class Nim():
             self.winner = self.player
 
 
-class NimAI():
+class NimAI(object):
 
     def __init__(self, alpha=0.5, epsilon=0.1):
         """

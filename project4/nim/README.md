@@ -1,7 +1,7 @@
 # Nim
 
 ### Description
-An AI that teaches itself to play Nim through reinforcement learning.
+An AI that teaches itself to play Nim through reinforcement learning. The AI learns from training itself and from playing against a real human player.
 
 In the game Nim, we begin with some number of piles, each with some number of objects. Players take turns: on a player’s turn, the player removes any non-negative number of objects from any one non-empty pile. Whoever removes the last object loses.
 
@@ -37,7 +37,7 @@ AI chose to take 1 from pile 2.
 ```
 
 ### Background
-The AI learns the strategy for this game through reinforcement learning. By playing against itself repeatedly and learning from experience, eventually the AI will learn which actions to take and which actions to avoid.
+The AI learns the strategy for this game through reinforcement learning. By playing against itself repeatedly and learning from experience, eventually the AI will learn which actions to take and which actions to avoid. The AI learns from training itself and from playing against a real human player.
 
 In particular, Q-learning will be used for this project. In Q-learning, we try to learn a reward value (a number) for every ```(state, action)``` pair. An action that loses the game will have a reward of -1, an action that results in the other player losing the game will have a reward of 1, and an action that results in the game continuing has an immediate reward of 0, but will also have some future reward.
 

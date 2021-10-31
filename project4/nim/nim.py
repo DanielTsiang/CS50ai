@@ -302,7 +302,8 @@ def play(ai, human_player=None):
         last[game.player]["action"] = action
 
         # Make move
-        game.move((pile, count))
+        game.move(action)
+        new_state = game.piles.copy()
 
         # Check for winner
         if game.winner is not None:
@@ -310,4 +311,13 @@ def play(ai, human_player=None):
             print("GAME OVER")
             winner = "Human" if game.winner == human_player else "AI"
             print(f"Winner is {winner}")
+
+            # When game is over, update Q values with rewards
+            ai.update(state, action, new_state, -1)
+            ai.update(
+                last[game.player]["state"],
+                last[game.player]["action"],
+                new_state,
+                1
+            )
             return None

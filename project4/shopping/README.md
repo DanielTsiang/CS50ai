@@ -10,6 +10,7 @@ An AI that predicts whether online shopping customers will complete a purchase, 
 ### Getting Started
 1. Visit a demo [here](https://replit.com/@DanielTsiang/shopping).
 2. Click the green button to run the demo code. Or run ```python shopping.py shopping.csv```.
+3. A unit test can be run via ```python test_shopping.py ```.
 
 ### Example
 ```

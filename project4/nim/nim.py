@@ -257,6 +257,12 @@ def play(ai, human_player=None):
     # Create new game
     game = Nim()
 
+    # Keep track of last move made by either player
+    last = {
+        0: {"state": None, "action": None},
+        1: {"state": None, "action": None}
+    }
+
     # Game loop
     while True:
 
@@ -287,6 +293,14 @@ def play(ai, human_player=None):
             pile, count = ai.choose_action(game.piles, epsilon=False)
             print(f"AI chose to take {count} from pile {pile}.")
 
+        # Keep track of current state and action
+        state = game.piles.copy()
+        action = (pile, count)
+
+        # Keep track of last state and action
+        last[game.player]["state"] = state
+        last[game.player]["action"] = action
+
         # Make move
         game.move((pile, count))
 
@@ -296,4 +310,4 @@ def play(ai, human_player=None):
             print("GAME OVER")
             winner = "Human" if game.winner == human_player else "AI"
             print(f"Winner is {winner}")
-            return
+            return None

@@ -2,7 +2,7 @@ import itertools
 import random
 
 
-class Minesweeper():
+class Minesweeper(object):
     """
     Minesweeper game representation
     """
@@ -80,7 +80,7 @@ class Minesweeper():
         return self.mines_found == self.mines
 
 
-class Sentence():
+class Sentence(object):
     """
     Logical statement about a Minesweeper game
     A sentence consists of a set of board cells,
@@ -135,7 +135,7 @@ class Sentence():
             self.cells.remove(cell)
 
 
-class MinesweeperAI():
+class MinesweeperAI(object):
     """
     Minesweeper game player
     """

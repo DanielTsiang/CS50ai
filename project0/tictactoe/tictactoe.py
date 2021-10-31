@@ -126,9 +126,9 @@ def utility(board):
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
     winner_check = winner(board)
-    if (winner_check == X):
+    if winner_check == X:
         return 1
-    elif (winner_check == O):
+    elif winner_check == O:
         return -1
     else:
         return 0
@@ -142,7 +142,7 @@ def minimax(board):
         return None
 
     if board == initial_state():
-        return (randrange(3), randrange(3))
+        return randrange(3), randrange(3)
     
     alpha = float("-inf")
     beta = float("inf")

@@ -34,7 +34,7 @@ class Test(unittest.TestCase):
                                 message = f"\nFailed for {family[5:12]}, {person}, " \
                                           f"{field.capitalize()}: {value}" \
                                           f"\nExpected {expected} but calculated {result}"
-                                self.assertEqual(result, expected, message)
+                                self.assertEqual(expected, result, message)
 
 
 if __name__ == "__main__":

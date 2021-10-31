@@ -32,7 +32,7 @@ class Test(unittest.TestCase):
                         expected = self.corpuses[corpus][page]
                         message = f"\nSample method failed for {corpus}, {page}" \
                                   f"\nExpected around {expected} but calculated {ranks[page]}."
-                        self.assertAlmostEqual(ranks[page], expected, places=1, msg=message)
+                        self.assertAlmostEqual(expected, ranks[page], places=1, msg=message)
 
     def test_iterate(self):
         for corpus in self.corpuses:
@@ -45,7 +45,7 @@ class Test(unittest.TestCase):
                         expected = self.corpuses[corpus][page]
                         message = f"\nIterate method failed for {corpus}, {page}" \
                                   f"\nExpected {expected} but calculated {ranks[page]}."
-                        self.assertAlmostEqual(ranks[page], expected, places=4, msg=message)
+                        self.assertAlmostEqual(expected, ranks[page], places=4, msg=message)
 
 
 if __name__ == "__main__":

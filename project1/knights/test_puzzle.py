@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
                 for symbol in self.symbols:
                     if model_check(knowledge, symbol):
                         message = f"failed for {puzzle}.\nExpected '{expected[counter]}' but got '{symbol}' instead."
-                        self.assertEqual(symbol, expected[counter], message)
+                        self.assertEqual(expected[counter], symbol, message)
                         counter += 1
 
 

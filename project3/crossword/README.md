@@ -14,7 +14,7 @@ Given the structure of a crossword puzzle and a list of words to use, the AI cho
 2. Click the green button to run the demo code for the ```structure1``` structure and ```words1``` data set.
 3. The generated crossword puzzle can be viewed in the picture named ```output1.png```.
 4. Alternatively run ```python generate.py data/structure0.txt data/words0.txt output0.png``` or ```python generate.py data/structure2.txt data/words2.txt output2.png``` or any other combination, to generate crossword puzzles for other structures and data sets.
-5. A unit test for the ```structure1``` structure and ```words1``` data set can be run via ```python test_crossword.py data/structure1.txt data/words1.txt [output1.png]```.
+5. Unit tests for all 3 data sets can be run via ```python test_crossword.py ```.
 
 ### Example
 Example with the ```structure1``` structure and ```words1``` data set:

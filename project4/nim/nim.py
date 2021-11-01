@@ -108,7 +108,7 @@ class NimAI(object):
         """
         Update the Q-value for the state `state` and the action `action`
         given the previous Q-value `old_q`, a current reward `reward`,
-        and an estiamte of future rewards `future_rewards`.
+        and an estimate of future rewards `future_rewards`.
 
         Use the formula:
 
@@ -175,7 +175,7 @@ class NimAI(object):
                 best_action = action
                 best_reward = possible_reward
 
-        # If not using greedy algorithm and exploration probability is within episilon, choose action randomly
+        # If not using greedy algorithm and exploration probability is within epsilon, choose action randomly
         exploration_probability = random.random()
         if epsilon and exploration_probability <= self.epsilon:
             return random.choice(list(available_actions))
@@ -320,4 +320,13 @@ def play(ai, human_player=None):
                 new_state,
                 1
             )
-            return None
+            return ai
+
+        # If game is continuing, no rewards yet
+        elif last[game.player]["state"] is not None:
+            ai.update(
+                last[game.player]["state"],
+                last[game.player]["action"],
+                new_state,
+                0
+            )

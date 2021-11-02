@@ -30,16 +30,16 @@ class Test(unittest.TestCase):
             cls.actual_true_negative_rate = 100 * specificity
 
     def test_correct(self):
-        np.testing.assert_approx_equal(self.actual_correct, self.expected_correct, significant=2)
+        np.testing.assert_allclose(self.actual_correct, self.expected_correct, rtol=0.02)
 
     def test_incorrect(self):
-        np.testing.assert_approx_equal(self.actual_incorrect, self.expected_incorrect, significant=1)
+        np.testing.assert_allclose(self.actual_incorrect, self.expected_incorrect, rtol=0.05)
 
     def test_true_positive_rate(self):
-        np.testing.assert_approx_equal(self.actual_true_positive_rate, self.expected_true_positive_rate, significant=1)
+        np.testing.assert_allclose(self.actual_true_positive_rate, self.expected_true_positive_rate, atol=6)
 
     def test_true_negative_rate(self):
-        np.testing.assert_approx_equal(self.actual_true_negative_rate, self.expected_true_negative_rate, significant=1)
+        np.testing.assert_allclose(self.actual_true_negative_rate, self.expected_true_negative_rate, atol=2)
 
 
 if __name__ == "__main__":

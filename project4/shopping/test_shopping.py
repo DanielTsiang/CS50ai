@@ -24,8 +24,10 @@ class Test(unittest.TestCase):
         # Mock `sys.argv` using `patch.object()`
         with patch.object(sys, "argv", [Path(__file__).name, "shopping.csv"]):
             y_test, predictions, sensitivity, specificity = find_predictions()
+
             # Number of correctly classified samples
             correct = accuracy_score(y_test, predictions, normalize=False)
+
             # Number of incorrectly classified samples
             incorrect = len(y_test) - correct
 

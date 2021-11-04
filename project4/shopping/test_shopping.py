@@ -3,6 +3,7 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 import numpy as np
+from sklearn.metrics import accuracy_score
 
 from shopping import find_predictions
 
@@ -23,9 +24,13 @@ class Test(unittest.TestCase):
         # Mock `sys.argv` using `patch.object()`
         with patch.object(sys, "argv", [Path(__file__).name, "shopping.csv"]):
             y_test, predictions, sensitivity, specificity = find_predictions()
+            # Number of correctly classified samples
+            correct = accuracy_score(y_test, predictions, normalize=False)
+            # Number of incorrectly classified samples
+            incorrect = len(y_test) - correct
 
-            cls.actual_correct = sum(i == j for i, j in zip(y_test, predictions))
-            cls.actual_incorrect = sum(i != j for i, j in zip(y_test, predictions))
+            cls.actual_correct = correct
+            cls.actual_incorrect = incorrect
             cls.actual_true_positive_rate = 100 * sensitivity
             cls.actual_true_negative_rate = 100 * specificity
 

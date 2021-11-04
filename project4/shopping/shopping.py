@@ -4,6 +4,7 @@ import calendar
 
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 
 TEST_SIZE = 0.4
 
@@ -16,9 +17,15 @@ def main():
 
     y_test, predictions, sensitivity, specificity = find_predictions()
 
+    # Number of correctly classified samples
+    correct = accuracy_score(y_test, predictions, normalize=False)
+
+    # Number of incorrectly classified samples
+    incorrect = len(y_test) - correct
+
     # Print results
-    print(f"Correct: {sum(i == j for i, j in zip(y_test, predictions))}")
-    print(f"Incorrect: {sum(i != j for i, j in zip(y_test, predictions))}")
+    print(f"Correct: {correct}")
+    print(f"Incorrect: {incorrect}")
     print(f"True Positive Rate: {100 * sensitivity:.2f}%")
     print(f"True Negative Rate: {100 * specificity:.2f}%")
 

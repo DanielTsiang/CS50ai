@@ -21,7 +21,7 @@ def main():
     correct = accuracy_score(y_test, predictions, normalize=False)
 
     # Number of incorrectly classified samples
-    incorrect = len(y_test) - correct
+    incorrect = len(predictions) - correct
 
     # Print results
     print(f"Correct: {correct}")

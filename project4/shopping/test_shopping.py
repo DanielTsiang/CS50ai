@@ -29,7 +29,7 @@ class Test(unittest.TestCase):
             correct = accuracy_score(y_test, predictions, normalize=False)
 
             # Number of incorrectly classified samples
-            incorrect = len(y_test) - correct
+            incorrect = len(predictions) - correct
 
             cls.actual_correct = correct
             cls.actual_incorrect = incorrect

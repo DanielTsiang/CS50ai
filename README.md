@@ -4,7 +4,7 @@
 This repository holds the programs I wrote as part of Harvard University's [CS50ai](https://cs50.harvard.edu/ai/2020/ "CS50ai 2021") Artificial Intelligence with Python course.
 
 <p align="center">
-  <img src="https://prod-discovery.edx-cdn.org/media/course/image/3a31db71-de8f-45f1-ae65-11981ed9d680-31634d40b3bb.small.png">
+  <img src="https://user-images.githubusercontent.com/74436899/141787047-c97959fa-b2f9-4f93-b0c0-2a300d155262.png">
 </p>
 
 ### Topics covered

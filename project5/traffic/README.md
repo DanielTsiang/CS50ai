@@ -14,7 +14,7 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 2. Alternatively, a GIF demo can be viewed [here](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif).
 
 ### Technologies Used
-* Python with TensorFlow
+* Python with TensorFlow & OpenCV
 
 ### Experimentation Process
 #### Step 1

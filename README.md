@@ -36,5 +36,5 @@ This repository holds the programs I wrote as part of Harvard University's [CS50
 | [2](https://cs50.harvard.edu/ai/2020/projects/2/) | [PageRank](https://replit.com/@DanielTsiang/pagerank), [Heredity](https://replit.com/@DanielTsiang/heredity) | Python |
 | [3](https://cs50.harvard.edu/ai/2020/projects/3/) | [Crossword](https://replit.com/@DanielTsiang/crossword) | Python |
 | [4](https://cs50.harvard.edu/ai/2020/projects/4/) | [Shopping](https://replit.com/@DanielTsiang/shopping), [Nim](https://replit.com/@DanielTsiang/Nim) | Python |
-| [5](https://cs50.harvard.edu/ai/2020/projects/5/) | Traffic              |                   |
+| [5](https://cs50.harvard.edu/ai/2020/projects/5/) | [Traffic](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif) | Python with TensorFlow & OpenCV |
 | [6](https://cs50.harvard.edu/ai/2020/projects/6/) | Parser, Questions    |                   |

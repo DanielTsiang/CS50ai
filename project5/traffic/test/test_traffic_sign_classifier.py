@@ -1,5 +1,5 @@
 import unittest
-from cv2 import cv2
+import cv2
 import os
 from pathlib import Path
 import tensorflow as tf

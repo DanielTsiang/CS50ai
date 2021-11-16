@@ -11,14 +11,15 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 
 ### Getting Started
 1. Run ```python traffic.py gtsrb```.
-2. Alternatively, a GIF demo can be viewed [here](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif).
 
 ### Technologies Used
 * Python with TensorFlow & OpenCV
 
 ### Experimentation Process
-#### Step 1
-I started by applying: **one** convolutional layer learning 32 filters using a 3×3 kernel,
+A GIF demoing a training run can be viewed [here](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif).
+
+#### Step 1 
+I started by applying: **one** convolutional layer learning 32 filters using a 3×3 kernel, 
 **one** max-pooling layer using a 2×2 pool size,
 **one** hidden layer with 128 units and a 0.5 dropout.
 

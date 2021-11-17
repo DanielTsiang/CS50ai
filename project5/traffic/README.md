@@ -11,7 +11,7 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 
 ### Getting Started
 1. Run ```python train_traffic_sign_classifier.py gtsrb```.
-2. A unit test can be run via ```python test/test_traffic_sign_classifier.py```
+2. A unit test for the model can be run via ```python test/test_traffic_sign_classifier.py```. Or visit a demo unit test [here](https://replit.com/@DanielTsiang/traffic).
 
 ### Technologies Used
 * Python with TensorFlow & OpenCV

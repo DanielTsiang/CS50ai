@@ -1,12 +1,5 @@
 ## Traffic Sign Classes
 
-<figure>
-  <img
-  src="https://user-images.githubusercontent.com/74436899/142769396-5f187368-a933-42d9-b578-1975222d8cd2.png"
-  alt="43 Clear Traffic Sign Examples">
-  <figcaption>43 Clear Traffic Sign Examples</figcaption>
-</figure>
-
 ### Table of classes
 | Class Number | Class Description                               |
 | ------------ | ----------------------------------------------- |
@@ -53,3 +46,8 @@
 | 40           | Roundabout mandatory                            |
 | 41           | End of no passing                               |
 | 42           | End of no passing vehicles over 3.5 metric tons |
+
+### Traffic Sign Images
+Clear examples of 43 traffic signs | Examples of images with impairments used for training & testing
+:-------------------------:|:-------------------------:
+![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770052-544062d4-1ce8-43b2-b9b4-96b8ee3fa8c0.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770092-72f178b4-3fb6-4c3a-b94a-fbcd97f97ce1.png)

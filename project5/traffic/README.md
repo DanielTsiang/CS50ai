@@ -16,6 +16,11 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 ### Technologies Used
 * Python with TensorFlow & OpenCV
 
+### Traffic Sign Images
+Clear examples of 43 traffic signs | Examples of actual images used for training & testing
+:-------------------------:|:-------------------------:
+![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg)
+
 ### Experimentation Process
 A GIF demoing a training run can be viewed [here](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif).
 

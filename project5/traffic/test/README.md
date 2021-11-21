@@ -1,10 +1,5 @@
 ## Traffic Sign Classes
 
-### Traffic Sign Images
-Clear examples of 43 traffic signs | Examples of actual images used for training & testing
-:-------------------------:|:-------------------------:
-![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg)
-
 ### Table of Classes
 | Class Number | Class Description                               |
 | ------------ | ----------------------------------------------- |

@@ -24,6 +24,7 @@ class TrafficSignClassifierTestCase(unittest.TestCase):
                 extension = os.path.splitext(filename)[1]
                 if extension.lower() not in self.valid_images:
                     continue
+
                 # GIVEN
                 # Load valid images into memory and preprocess them into format TensorFlow model expects
                 loaded_image = cv2.imread(os.path.join(self.directory, filename), cv2.IMREAD_COLOR)
@@ -32,6 +33,7 @@ class TrafficSignClassifierTestCase(unittest.TestCase):
 
                 # WHEN
                 prediction = self.model.predict(expanded_image)
+
                 # THEN
                 # Get top prediction index and compare with expected value
                 top_prediction_index = prediction[0].argsort()[::-1][0]

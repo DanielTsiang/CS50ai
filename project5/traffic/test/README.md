@@ -48,6 +48,6 @@
 | 42           | End of no passing vehicles over 3.5 metric tons |
 
 ### Traffic Sign Images
-Clear examples of 43 traffic signs | Examples of images with impairments used for training & testing
+Clear examples of 43 traffic signs | Examples of actual images used for training & testing
 :-------------------------:|:-------------------------:
-![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770052-544062d4-1ce8-43b2-b9b4-96b8ee3fa8c0.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770092-72f178b4-3fb6-4c3a-b94a-fbcd97f97ce1.png)
+![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg)

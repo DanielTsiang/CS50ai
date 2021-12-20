@@ -4,7 +4,7 @@
 An unbeatable Tic-Tac-Toe AI, implemented using Minimax algorithm with Alpha-Beta pruning to run more efficiently.
 
 ### Getting Started
-1. Visit the demo [here](https://replit.com/@DanielTsiang/tic-tac-toe).
+1. Visit the demo [here](https://replit.com/@DanielTsiang/tic-tac-toe#README.md).
 2. Click the green button to run the code.
 3. Choose your Player, Player X always starts first.
 

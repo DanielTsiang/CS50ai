@@ -14,7 +14,7 @@ The objective of the puzzle is, given a set of sentences spoken by each of the c
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/logic-puzzles).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/logic-puzzles#README.md).
 2. Click the green button to run the demo code. Or run ```python puzzle.py```.
 3. View the answers in the terminal.
 4. A unit test can be run via ```python test_puzzle.py```.

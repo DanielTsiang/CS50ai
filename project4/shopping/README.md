@@ -8,7 +8,7 @@ An AI that predicts whether online shopping customers will complete a purchase, 
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/shopping).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/shopping#README.md).
 2. Click the green button to run the demo code. Or run ```python shopping.py shopping.csv```.
 3. A unit test can be run via ```python test_shopping.py ```.
 
@@ -22,7 +22,7 @@ True Negative Rate: 90.55%
 ```
 
 ### Background
-Given information about a user — how many pages they’ve visited, whether they’re shopping on a weekend, what web browser they’re using, etc. — the nearest-neighbor classifier will predict whether or not the user will make a purchase.
+Given information about a user — how many pages they’ve visited, whether they’re shopping on a weekend, what web browser they’re using, etc. — the nearest-neighbor classifier will predict whether the user will make a purchase.
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
 

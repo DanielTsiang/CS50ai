@@ -10,7 +10,7 @@ An AI that assesses the likelihood that a person will have a particular genetic 
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/heredity).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/heredity#README.md).
 2. Click the green button to run the demo code for the ```family0``` data set.
 3. Alternatively run ```python heredity.py data/family1.csv``` or ```python heredity.py data/family2.csv``` to calculate the genetic probabilities for other data sets.
 4. Unit tests for all 3 data sets can be run via ```python test_heredity.py```.
@@ -48,7 +48,7 @@ Lily:
 ### Background
 Mutated versions of the GJB2 gene are one of the leading causes of hearing impairment in newborns. Each person carries two versions of the gene, so each person has the potential to possess either 0, 1, or 2 copies of the hearing impairment version GJB2. Unless a person undergoes genetic testing, though, it’s not so easy to know how many copies of mutated GJB2 a person has. This is some “hidden state”: information that has an effect that we can observe (hearing impairment), but that we don’t necessarily directly know. After all, some people might have 1 or 2 copies of mutated GJB2 but not exhibit hearing impairment, while others might have no copies of mutated GJB2 yet still exhibit hearing impairment.
 
-Every child inherits one copy of the GJB2 gene from each of their parents. If a parent has two copies of the mutated gene, then they will pass the mutated gene on to the child; if a parent has no copies of the mutated gene, then they will not pass the mutated gene on to the child; and if a parent has one copy of the mutated gene, then the gene is passed on to the child with probability 0.5. After a gene is passed on, though, it has some probability of undergoing additional mutation: changing from a version of the gene that causes hearing impairment to a version that doesn’t, or vice versa.
+Every child inherits one copy of the GJB2 gene from each of their parents. If a parent has two copies of the mutated gene, then they will pass the mutated gene on to the child; if a parent has no copies of the mutated gene, then they will not pass the mutated gene on to the child; and if a parent has one copy of the mutated gene, then the gene is passed on to the child with probability 0.5. After a gene is passed on, though, it has some probability of undergoing additional mutation: changing from a version of the gene that causes hearing impairment to a version that does not, or vice versa.
 
 We can attempt to model all of these relationships by forming a Bayesian Network of all the relevant variables, as in the one below, which considers a family of two parents and a single child.
 

@@ -12,7 +12,7 @@ Two approaches are used for calculating PageRank:
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/pagerank).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/pagerank#README.md).
 2. Click the green button to run the demo code for the ```corpus0``` data set.
 3. Alternatively run ```python pagerank.py corpus1``` or ```python pagerank.py corpus2``` to calculate PageRank for other data sets.
 4. Unit tests for the two approaches can be run via ```python test_pagerank.py```.

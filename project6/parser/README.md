@@ -9,10 +9,11 @@ An AI that parses sentences and extracts noun phrases.
 </p>
 
 ### Getting Started
-1. Click the green button to run the demo code. Or run ```python parser.py [sentences/<number>.txt]```.
-2. Optionally, a path to a text file containing a sentence can be given. The sentences folder contains pre-made sentences using words that the AI can understand.
-3. If no text file path is given, the user can enter their own sentence constructed using the words defined in the variable ```TERMINALS``` on line 6.
-4. A unit test can be run via ```python test_parser.py```.
+1. Visit a demo [here](https://replit.com/@DanielTsiang/parser#README.md).
+2. Click the green button to run the demo code. Or run ```python parser.py [sentences/<number>.txt]```.
+3. Optionally, a path to a text file containing a sentence can be given. The sentences folder contains pre-made sentences using words that the AI can understand.
+4. If no text file path is given, the user can enter their own sentence constructed using the words defined in the variable ```TERMINALS``` on line 6.
+5. A unit test can be run via ```python test_parser.py```.
 
 ### Example
 ```
@@ -43,7 +44,7 @@ Noun Phrase Chunks:
 ```
 
 ### Background
-Context-free grammar formalism is used to parse English sentences and determine their structure. In context-free grammar, rewriting rules are repeatedly applied to transform symbols into other symbols. The objective is to start with a nonterminal symbol ```S``` (representing a sentence) and repeatedly apply context-free grammar rules until a complete sentence of terminal symbols (i.e., words) is generated. 
+Context-free grammar formalism is used to parse English sentences and determine their structure. In context-free grammar, rewriting rules are repeatedly applied to transform symbols into other symbols. The objective is to start with a non-terminal symbol ```S``` (representing a sentence) and repeatedly apply context-free grammar rules until a complete sentence of terminal symbols (i.e., words) is generated. 
 
 The rule ```S -> N V```, for example, means that the ```S``` symbol can be rewritten as ```N V``` (a noun followed by a verb). If there is also the rule ```N -> "Holmes"``` and the rule ```V -> "sat"```, the complete sentence ```"Holmes sat."``` can be generated.
 

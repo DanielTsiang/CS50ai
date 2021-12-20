@@ -11,15 +11,15 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 
 ### Getting Started
 1. Run ```python train_traffic_sign_classifier.py gtsrb [model.h5]``` to train and optionally save the model.
-2. A unit test for the pre-trained model can be run via ```python test/test_traffic_sign_classifier.py```. Or visit a demo unit test [here](https://replit.com/@DanielTsiang/traffic).
+2. A unit test for the pre-trained model can be run via ```python test/test_traffic_sign_classifier.py```. Or visit a demo unit test [here](https://replit.com/@DanielTsiang/traffic#README.md).
 
 ### Technologies Used
 * Python with TensorFlow & OpenCV
 
 ### Traffic Sign Images
-Clear examples of 43 traffic signs | Examples of actual images used for training & testing
-:-------------------------:|:-------------------------:
-![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png)  |  ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg)
+|                                                   Clear examples of 43 traffic signs                                                   |                                          Examples of actual images used for training & testing                                          |
+|:--------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
+| ![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png) | ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg) |
 
 ### Experimentation Process
 A GIF demoing a training run can be viewed [here](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif).

@@ -10,7 +10,7 @@ In the game Nim, we begin with some number of piles, each with some number of ob
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/nim).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/nim#README.md).
 2. Click the green button to run the demo code. Or run ```python play.py```.
 3. Wait for AI to finish training itself. The number of games the AI trains on can be modified in ```play.py```.
 4. Follow the on-screen instructions!
@@ -41,7 +41,7 @@ The AI learns the strategy for this game through reinforcement learning. By play
 
 In particular, Q-learning will be used for this project. In Q-learning, we try to learn a reward value (a number) for every ```(state, action)``` pair. An action that loses the game will have a reward of -1, an action that results in the other player losing the game will have a reward of 1, and an action that results in the game continuing has an immediate reward of 0, but will also have some future reward.
 
-A “state” of the Nim game is just the current size of all of the piles. A state, for example, might be ```[1, 1, 3, 5]```, representing the state with 1 object in pile 0, 1 object in pile 1, 3 objects in pile 2, and 5 objects in pile 3.
+A “state” of the Nim game is just the current size of all the piles. A state, for example, might be ```[1, 1, 3, 5]```, representing the state with 1 object in pile 0, 1 object in pile 1, 3 objects in pile 2, and 5 objects in pile 3.
 
 An “action” in the Nim game will be a pair of integers ```(i, j)```, representing the action of taking ```j``` objects from pile ```i```. So the action ```(3, 5)``` represents the action “from pile 3, take away 5 objects.” Applying that action to the state ```[1, 1, 3, 5]``` would result in the new state ```[1, 1, 3, 0]``` (the same state, but with pile 3 now empty).
 

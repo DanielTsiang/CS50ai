@@ -10,7 +10,7 @@ Given the structure of a crossword puzzle and a list of words to use, the AI cho
 </p>
 
 ### Getting Started
-1. Visit a demo [here](https://replit.com/@DanielTsiang/crossword).
+1. Visit a demo [here](https://replit.com/@DanielTsiang/crossword#README.md).
 2. Click the green button to run the demo code for the ```structure1``` structure and ```words1``` data set.
 3. The generated crossword puzzle can be viewed in the picture named ```output1.png```.
 4. Alternatively run ```python generate.py data/structure0.txt data/words0.txt output0.png``` or ```python generate.py data/structure2.txt data/words2.txt output2.png``` or any other combination, to generate crossword puzzles for other structures and data sets.
@@ -46,7 +46,7 @@ The binary constraints on a variable are given by its overlap with neighboring v
 
 For this problem, we’ll add the additional constraint that all words must be different: the same word should not be repeated multiple times in the puzzle.
 
-The challenge ahead, then, is write a program to find a satisfying assignment: a different word (from a given vocabulary list) for each variable such that all of the unary and binary constraints are met.
+The challenge ahead, then, is to write a program to find a satisfying assignment: a different word (from a given vocabulary list) for each variable such that all the unary and binary constraints are met.
 
 ### Technologies Used
 * Python

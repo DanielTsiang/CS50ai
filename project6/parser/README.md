@@ -10,14 +10,14 @@ An AI that parses sentences and extracts noun phrases.
 
 ### Getting Started
 1. Visit a demo [here](https://replit.com/@DanielTsiang/parser#README.md).
-2. Click the green button to run the demo code. Or run ```python parser.py [sentences/<number>.txt]```.
+2. Click the green button to run the demo code. Or run ```python sentence_parser.py [sentences/<number>.txt]```.
 3. Optionally, a path to a text file containing a sentence can be given. The sentences folder contains pre-made sentences using words that the AI can understand.
 4. If no text file path is given, the user can enter their own sentence constructed using the words defined in the variable ```TERMINALS``` on line 6.
-5. A unit test can be run via ```python test_parser.py```.
+5. A unit test can be run via ```python test_sentence_parser.py```.
 
 ### Example
 ```
-$ python parser.py sentences/7.txt
+$ python sentence_parser.py sentences/7.txt
 Sentence: She never said a word until we were at the door here.
 Tree:
                                   S                                     

@@ -29,12 +29,12 @@ This repository holds the programs I wrote as part of Harvard University's [CS50
 
 ### Projects
 
-|                      Number                       | Name(s)                                                                                                                                          |              Technologies Used              |
+|                      Number                       | Name and Demo Link                                                                                                                               |              Technologies Used              |
 |:-------------------------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------:|
 | [0](https://cs50.harvard.edu/ai/2020/projects/0/) | [Degrees of Separation](https://replit.com/@DanielTsiang/degrees), [Tic-Tac-Toe AI](https://replit.com/@DanielTsiang/tic-tac-toe)                |             Python with Pygame              |
 | [1](https://cs50.harvard.edu/ai/2020/projects/1/) | [Knights & Knaves Logic Puzzles](https://replit.com/@DanielTsiang/logic-puzzles), [Minesweeper AI](https://replit.com/@DanielTsiang/minesweeper) |             Python with Pygame              |
 | [2](https://cs50.harvard.edu/ai/2020/projects/2/) | [PageRank](https://replit.com/@DanielTsiang/pagerank), [Heredity](https://replit.com/@DanielTsiang/heredity)                                     |                   Python                    |
 | [3](https://cs50.harvard.edu/ai/2020/projects/3/) | [Crossword](https://replit.com/@DanielTsiang/crossword)                                                                                          |                   Python                    |
-| [4](https://cs50.harvard.edu/ai/2020/projects/4/) | [Shopping](https://replit.com/@DanielTsiang/shopping), [Nim](https://replit.com/@DanielTsiang/Nim)                                               |                   Python                    |
+| [4](https://cs50.harvard.edu/ai/2020/projects/4/) | [Shopping](https://replit.com/@DanielTsiang/shopping), [Nim](https://replit.com/@DanielTsiang/Nim)                                               |          Python with Scikit-learn           |
 | [5](https://cs50.harvard.edu/ai/2020/projects/5/) | [Traffic](https://user-images.githubusercontent.com/74436899/141786355-df10ee7c-c161-4e0c-b0c8-36bc7e40bbd4.gif)                                 |       Python with TensorFlow & OpenCV       |
-| [6](https://cs50.harvard.edu/ai/2020/projects/6/) | [Parser](https://replit.com/@DanielTsiang/parser), Questions                                                                                     | Python with Natural Language Toolkit (NLTK) |
+| [6](https://cs50.harvard.edu/ai/2020/projects/6/) | [Parser](https://replit.com/@DanielTsiang/parser), [Answerbot](https://replit.com/@DanielTsiang/answerbot)                                       | Python with Natural Language Toolkit (NLTK) |

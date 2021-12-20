@@ -4,7 +4,7 @@
 An AI that predicts whether online shopping customers will complete a purchase, by using a nearest-neighbor classifier.
 
 <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/74436899/131148662-6eb5ff59-d496-44a2-90d6-490c39d7da4d.png">
+  <img width="500" src="https://user-images.githubusercontent.com/74436899/146847921-a4ce2602-363a-4c06-8d4f-0dc4b2e8a0d5.png">
 </p>
 
 ### Getting Started

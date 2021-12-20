@@ -4,7 +4,7 @@
 
 An AI that answers questions.
 
-This AI is provided with information relating to artificial intelligence, machine learning, natural language processing, neural networks, probability and Python.
+This chatbot is provided with information relating to artificial intelligence, machine learning, natural language processing, neural networks, probability and Python.
 
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/74436899/146823355-1ba07602-d886-4b1c-9da6-674d58f29dc9.jpeg">

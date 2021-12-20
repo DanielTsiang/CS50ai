@@ -8,7 +8,7 @@ from answerbot import get_file_idfs, get_top_sentence_matches, tokenize
 
 class Test(unittest.TestCase):
     """
-    Unit test answerbot.py.
+    Unit test for answerbot.py.
     Usage: python test_answerbot.py
     """
 

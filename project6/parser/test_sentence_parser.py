@@ -30,7 +30,7 @@ class Test(unittest.TestCase):
         self.max_sentences = 10
         self.sentences_directory = "sentences"
 
-    def test_parser(self):
+    def test_sentence_parser(self):
         # Mock `sys.argv` using `patch.object()`
         with patch.object(sys, "argv", [Path(__file__).name, self.sentences_directory]):
             for i in range(1, self.max_sentences + 1):

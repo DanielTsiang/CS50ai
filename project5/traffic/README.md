@@ -19,7 +19,7 @@ The AI uses a Convolutional Neural Network based on the TensorFlow Keras Sequent
 ### Traffic Sign Images
 |                                                   Clear examples of 43 traffic signs                                                   |                                          Examples of actual images used for training & testing                                          |
 |:--------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
-| ![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142770892-29d648e4-4bfd-4f0e-885f-fb3ed5a64be1.png) | ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg) |
+| ![Clear Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/151055580-fcf54f77-1753-4793-8aab-07384183c17b.png) | ![Actual Traffic Signs Examples](https://user-images.githubusercontent.com/74436899/142771030-f2afff5b-7b70-4be7-8969-90e101dc6ed2.jpg) |
 
 ### Experimentation Process
 A video demoing a training run can be viewed below:

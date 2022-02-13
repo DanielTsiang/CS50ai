@@ -1,11 +1,13 @@
-import csv
-import sys
 import calendar
+import csv
+import numpy as np
+import sys
 
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 
+CROSS_VALIDATION_SIZE = 5
 TEST_SIZE = 0.4
 
 
@@ -15,34 +17,72 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python shopping.py data")
 
-    y_test, predictions, sensitivity, specificity = find_predictions()
+    untuned_results, tuned_results = find_predictions()
 
-    # Number of correctly classified samples
-    correct = accuracy_score(y_test, predictions, normalize=False)
+    # Get number of correctly and incorrectly classified samples
+    correct_untuned = accuracy_score(untuned_results["y_test"], untuned_results["predictions"], normalize=False)
+    incorrect_untuned = len(untuned_results["predictions"]) - correct_untuned
 
-    # Number of incorrectly classified samples
-    incorrect = len(predictions) - correct
+    correct_tuned = accuracy_score(tuned_results["y_test"], tuned_results["predictions"], normalize=False)
+    incorrect_tuned = len(tuned_results["predictions"]) - correct_tuned
+
+    # Get confusion matrix and classification report
+    confusion_matrix_untuned = confusion_matrix(untuned_results["y_test"], untuned_results["predictions"])
+    classification_report_untuned = classification_report(untuned_results["y_test"], untuned_results["predictions"])
+
+    confusion_matrix_tuned = confusion_matrix(tuned_results["y_test"], tuned_results["predictions"])
+    classification_report_tuned = classification_report(tuned_results["y_test"], tuned_results["predictions"])
 
     # Print results
-    print(f"Correct: {correct}")
-    print(f"Incorrect: {incorrect}")
-    print(f"True Positive Rate: {100 * sensitivity:.2f}%")
-    print(f"True Negative Rate: {100 * specificity:.2f}%")
+    print("Untuned results:")
+    print(f"Correct: {correct_untuned}")
+    print(f"Incorrect: {incorrect_untuned}")
+    print(f"True Positive Rate: {100 * untuned_results['sensitivity']:.2f}%")
+    print(f"True Negative Rate: {100 * untuned_results['specificity']:.2f}%")
+    print(f"Confusion matrix:\n {confusion_matrix_untuned}")
+    print(f"Classification report:\n {classification_report_untuned}")
+
+    print("-------------------------------------------------")
+    print("Tuned results:")
+    print(f"Correct: {correct_tuned}")
+    print(f"Incorrect: {incorrect_tuned}")
+    print(f"True Positive Rate: {100 * tuned_results['sensitivity']:.2f}%")
+    print(f"True Negative Rate: {100 * tuned_results['specificity']:.2f}%")
+    print(f"Confusion matrix:\n {confusion_matrix_tuned}")
+    print(f"Classification report:\n {classification_report_tuned}")
 
 
 def find_predictions():
     # Load data from spreadsheet and split into train and test sets
     evidence, labels = load_data(sys.argv[1])
     X_train, X_test, y_train, y_test = train_test_split(
-        evidence, labels, test_size=TEST_SIZE
+        evidence, labels, test_size=TEST_SIZE, random_state=42, stratify=labels
     )
 
     # Train model and make predictions
-    model = train_model(X_train, y_train)
-    predictions = model.predict(X_test)
-    sensitivity, specificity = evaluate(y_test, predictions)
+    model_untuned, model_tuned = train_model(X_train, y_train)
 
-    return y_test, predictions, sensitivity, specificity
+    predictions_untuned = model_untuned.predict(X_test)
+    predictions_tuned = model_tuned.predict(X_test)
+
+    sensitivity_untuned, specificity_untuned = evaluate(y_test, predictions_untuned)
+    sensitivity_tuned, specificity_tuned = evaluate(y_test, predictions_tuned)
+
+    untuned_results = {
+        "y_test": y_test,
+        "predictions": predictions_untuned,
+        "sensitivity": sensitivity_untuned,
+        "specificity": specificity_untuned
+    }
+
+    tuned_results = {
+        "y_test": y_test,
+        "predictions": predictions_tuned,
+        "sensitivity": sensitivity_tuned,
+        "specificity": specificity_tuned
+    }
+
+    return untuned_results, tuned_results
 
 
 def load_data(filename):
@@ -116,17 +156,23 @@ def train_model(evidence, labels):
     Given a list of evidence lists and a list of labels, return a
     fitted k-nearest neighbor model (k=1) trained on the data.
     """
-    model = KNeighborsClassifier(n_neighbors=1)
-    model.fit(evidence, labels)
+    # Instantiate model
+    model_untuned = KNeighborsClassifier(n_neighbors=1)
+
+    # Tune hyperparameter
+    model_tuned = tuning(model_untuned, evidence, labels)
+
+    # Fit untuned model
+    model_untuned.fit(evidence, labels)
 
     # Return fitted model
-    return model
+    return model_untuned, model_tuned
 
 
 def evaluate(labels, predictions):
     """
     Given a list of actual labels and a list of predicted labels,
-    return a tuple (sensitivity, specificty).
+    return a tuple (sensitivity, specificity).
 
     Assume each label is either a 1 (positive) or 0 (negative).
 
@@ -156,6 +202,16 @@ def evaluate(labels, predictions):
     specificity /= negative
 
     return sensitivity, specificity
+
+
+def tuning(model, X_train, y_train):
+    # Create hyperparameter grid
+    hyperparameter_grid = {"n_neighbors": np.arange(1, 16)}
+    model_cross_validation = GridSearchCV(model, hyperparameter_grid, cv=CROSS_VALIDATION_SIZE)
+    model_cross_validation.fit(X_train, y_train)
+
+    # Return tuned KNN parameter
+    return model_cross_validation
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 ### Description
 An AI that predicts whether online shopping customers will complete a purchase,
-by using a tuned nearest-neighbor classifier on a scaled dataset.
+by using a tuned nearest-neighbor classifier on a scaled data set.
 
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/74436899/146847921-a4ce2602-363a-4c06-8d4f-0dc4b2e8a0d5.png">
@@ -36,7 +36,7 @@ what web browser they’re using, etc. — the nearest-neighbor classifier will 
 The number of nearest-neighbors used (i.e. the k-value) is tuned, via cross-validated grid search, to improve the performance of the classifier.
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
-The dataset is scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.
+The data set is scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.
 
 Three values are highlighted in the results:
 * accuracy (i.e. the correct predictions)

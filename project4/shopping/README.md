@@ -1,7 +1,8 @@
 # Shopping
 
 ### Description
-An AI that predicts whether online shopping customers will complete a purchase, by using a nearest-neighbor classifier.
+An AI that predicts whether online shopping customers will complete a purchase,
+by using a tuned nearest-neighbor classifier.
 
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/74436899/146847921-a4ce2602-363a-4c06-8d4f-0dc4b2e8a0d5.png">
@@ -15,10 +16,18 @@ An AI that predicts whether online shopping customers will complete a purchase, 
 ### Example
 ```
 $ python shopping.py shopping.csv
-Correct: 4088
-Incorrect: 844
-True Positive Rate: 41.02%
-True Negative Rate: 90.55%
+Accuracy: 88.6%
+True Positive Rate: 52.0%
+True Negative Rate: 95.3%
+Classification metrics:
+               precision    recall  f1-score   support
+
+           0       0.92      0.95      0.93      4169
+           1       0.67      0.52      0.59       763
+
+    accuracy                           0.89      4932
+   macro avg       0.79      0.74      0.76      4932
+weighted avg       0.88      0.89      0.88      4932
 ```
 
 ### Background
@@ -26,7 +35,8 @@ Given information about a user — how many pages they’ve visited, whether the
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
 
-Two values are measured:
+Three values are highlighted:
+* accuracy (i.e. the correct predictions)
 * sensitivity (also known as the “true positive rate”)
 * specificity (also known as the “true negative rate”).
 

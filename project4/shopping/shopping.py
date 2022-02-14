@@ -19,14 +19,12 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python shopping.py data")
 
-    print("Predicting labels...")
     y_test, y_pred = predict_labels()
 
     # Evaluate model performance
     report = classification_report(y_test, y_pred, output_dict=True)
 
     # Extract results
-    print("Results:")
     # `accuracy` represents the proportion of labels that were accurately identified
     print(f"Accuracy: {100 * report['accuracy']:.1f}%")
 
@@ -39,7 +37,7 @@ def main():
     print(f"True Negative Rate: {100 * report['0']['recall']:.1f}%")
 
     # Show full classification report
-    print(f"Classification report:\n {classification_report(y_test, y_pred)}")
+    print(f"Classification metrics:\n {classification_report(y_test, y_pred)}")
 
 
 def predict_labels() -> tuple[list, list]:

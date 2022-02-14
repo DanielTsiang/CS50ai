@@ -70,7 +70,7 @@ def train_model(X_train: list, y_train: list) -> GridSearchCV:
     # Create hyperparameter grid
     params = {"knn__n_neighbors": np.arange(5, 12)}
 
-    # Use cross-fold validation to tune k-nearest neighbor model, and then fit the model
+    # Use cross-validated grid search to tune k-nearest neighbor model, and then fit the model
     model_cross_validation = GridSearchCV(pipeline, params, cv=CROSS_VALIDATION_SIZE)
     model_cross_validation.fit(X_train, y_train)
 

@@ -33,7 +33,7 @@ weighted avg       0.88      0.89      0.88      4932
 ### Background
 Given information about a user — how many pages they’ve visited, whether they’re shopping on a weekend,
 what web browser they’re using, etc. — the nearest-neighbor classifier will predict whether the user will make a purchase.
-The number of nearest-neighbors used (i.e. the k-value) is tuned, to improve the performance of the classifier.
+The number of nearest-neighbors used (i.e. the k-value) is tuned, via cross-validated grid search, to improve the performance of the classifier.
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
 The dataset is scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.

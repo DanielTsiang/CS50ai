@@ -3,9 +3,9 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 import numpy as np
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 
-from shopping import find_predictions
+from shopping import predict_labels
 
 
 class Test(unittest.TestCase):
@@ -16,37 +16,29 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.expected_correct = 4082
-        cls.expected_incorrect = 850
-        cls.expected_true_positive_rate = 41.0
-        cls.expected_true_negative_rate = 90.0
+        cls.expected_accuracy = 0.886
+        cls.expected_true_positive_rate = 0.520
+        cls.expected_true_negative_rate = 0.953
 
         # Mock `sys.argv` using `patch.object()`
         with patch.object(sys, "argv", [Path(__file__).name, "shopping.csv"]):
-            y_test, predictions, sensitivity, specificity = find_predictions()
+            y_test, y_pred = predict_labels()
 
-            # Number of correctly classified samples
-            correct = accuracy_score(y_test, predictions, normalize=False)
+            # Evaluate model performance
+            report = classification_report(y_test, y_pred, output_dict=True)
 
-            # Number of incorrectly classified samples
-            incorrect = len(predictions) - correct
+            cls.actual_accuracy = report['accuracy']
+            cls.actual_true_positive_rate = report['1']['recall']
+            cls.actual_true_negative_rate = report['0']['recall']
 
-            cls.actual_correct = correct
-            cls.actual_incorrect = incorrect
-            cls.actual_true_positive_rate = 100 * sensitivity
-            cls.actual_true_negative_rate = 100 * specificity
-
-    def test_correct(self):
-        np.testing.assert_allclose(self.actual_correct, self.expected_correct, rtol=0.02)
-
-    def test_incorrect(self):
-        np.testing.assert_allclose(self.actual_incorrect, self.expected_incorrect, rtol=0.05)
+    def test_accuracy(self):
+        np.testing.assert_approx_equal(self.actual_accuracy, self.expected_accuracy, significant=3)
 
     def test_true_positive_rate(self):
-        np.testing.assert_allclose(self.actual_true_positive_rate, self.expected_true_positive_rate, atol=6)
+        np.testing.assert_approx_equal(self.actual_true_positive_rate, self.expected_true_positive_rate, significant=3)
 
     def test_true_negative_rate(self):
-        np.testing.assert_allclose(self.actual_true_negative_rate, self.expected_true_negative_rate, atol=2)
+        np.testing.assert_approx_equal(self.actual_true_negative_rate, self.expected_true_negative_rate, significant=3)
 
 
 if __name__ == "__main__":

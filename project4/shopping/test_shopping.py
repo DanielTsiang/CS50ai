@@ -16,9 +16,9 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.expected_accuracy = 0.886
-        cls.expected_true_positive_rate = 0.520
-        cls.expected_true_negative_rate = 0.953
+        cls.expected_accuracy = 0.889
+        cls.expected_true_positive_rate = 0.561
+        cls.expected_true_negative_rate = 0.949
 
         # Mock `sys.argv` using `patch.object()`
         with patch.object(sys, "argv", [Path(__file__).name, "shopping.csv"]):

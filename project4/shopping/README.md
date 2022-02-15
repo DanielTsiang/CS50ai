@@ -4,6 +4,8 @@
 An AI that predicts whether online shopping customers will complete a purchase,
 by using a tuned nearest-neighbor classifier on a scaled data set.
 
+Feature engineering was performed to select the best features with the highest scores.
+
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/74436899/146847921-a4ce2602-363a-4c06-8d4f-0dc4b2e8a0d5.png">
 </p>
@@ -33,7 +35,7 @@ weighted avg       0.88      0.89      0.88      4932
 ### Background
 Given information about a user — how many pages they’ve visited, whether they’re shopping on a weekend,
 what web browser they’re using, etc. — the nearest-neighbor classifier will predict whether the user will make a purchase.
-The number of nearest-neighbors used (i.e. the k-value) is tuned, via cross-validated grid search, to improve the performance of the classifier.
+The number of features and nearest-neighbors used (i.e. k-values) were tuned, via cross-validated grid search, to improve the performance of the classifier.
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
 The data set is scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.

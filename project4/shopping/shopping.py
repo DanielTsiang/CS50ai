@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import sys
 
+from sklearn.feature_selection import SelectKBest
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -62,13 +63,18 @@ def train_model(X_train: list, y_train: list) -> GridSearchCV:
     """
     Given a list of evidence lists (X_train) and a list of labels (y_train),
     return a fitted k-nearest neighbor model, with a tuned value of k, trained on the data.
+    Only the best features with the highest scores have been selected.
     """
     # Create pipeline
-    pipeline = Pipeline([("scaler", RobustScaler()),
+    pipeline = Pipeline([("kbest", SelectKBest()),
+                         ("scaler", RobustScaler()),
                          ("knn", KNeighborsClassifier())])
 
     # Create hyperparameter grid
-    params = {"knn__n_neighbors": np.arange(5, 12)}
+    params = {
+        "kbest__k": [5, 11, 17],
+        "knn__n_neighbors": np.arange(8, 12)
+    }
 
     # Use cross-validated grid search to tune k-nearest neighbor model, and then fit the model
     model_cross_validation = GridSearchCV(pipeline, params, cv=CROSS_VALIDATION_SIZE)

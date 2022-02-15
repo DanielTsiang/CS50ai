@@ -18,17 +18,17 @@ Feature engineering was performed to select the best features with the highest s
 ### Example
 ```
 $ python shopping.py shopping.csv
-Accuracy: 88.6%
-True Positive Rate: 52.0%
-True Negative Rate: 95.3%
+Accuracy: 88.9%
+True Positive Rate: 56.1%
+True Negative Rate: 94.9%
 Classification metrics:
                precision    recall  f1-score   support
 
-           0       0.92      0.95      0.93      4169
-           1       0.67      0.52      0.59       763
+           0       0.92      0.95      0.94      4169
+           1       0.67      0.56      0.61       763
 
     accuracy                           0.89      4932
-   macro avg       0.79      0.74      0.76      4932
+   macro avg       0.79      0.75      0.77      4932
 weighted avg       0.88      0.89      0.88      4932
 ```
 

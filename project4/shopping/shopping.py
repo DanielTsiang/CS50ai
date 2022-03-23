@@ -3,6 +3,8 @@ import csv
 import numpy as np
 import sys
 
+from imblearn.over_sampling import SMOTE
+
 from sklearn.feature_selection import SelectKBest
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV, train_test_split
@@ -44,6 +46,7 @@ def main():
 def predict_labels() -> tuple[list, list]:
     """
     Load and split data into train and test sets.
+    Since data is imbalanced, Synthetic Minority Oversampling Technique (SMOTE) is used to oversample the training data.
     Tune and train model, then use it to make predictions on label classification.
     """
     # Load data from spreadsheet and split into train and test sets
@@ -52,8 +55,12 @@ def predict_labels() -> tuple[list, list]:
         evidence, labels, test_size=TEST_SIZE, random_state=42, stratify=labels
     )
 
+    # Create oversampled training data using SMOTE technique
+    smote = SMOTE(random_state=42)
+    X_oversample, y_oversample = smote.fit_resample(X_train, y_train)
+
     # Tune and train model, and use it to make predictions
-    model = train_model(X_train, y_train)
+    model = train_model(X_oversample, y_oversample)
     y_pred = model.predict(X_test)
 
     return y_test, y_pred

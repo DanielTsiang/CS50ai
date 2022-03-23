@@ -2,7 +2,7 @@
 
 ### Description
 An AI that predicts whether online shopping customers will complete a purchase,
-by using a tuned nearest-neighbor classifier on a scaled data set.
+by using a tuned nearest-neighbor classifier on an overbalanced and scaled data set.
 
 Feature engineering was performed to select the best features with the highest scores.
 
@@ -18,18 +18,18 @@ Feature engineering was performed to select the best features with the highest s
 ### Example
 ```
 $ python shopping.py shopping.csv
-Accuracy: 88.9%
-True Positive Rate: 56.1%
-True Negative Rate: 94.9%
+Accuracy: 84.8%
+True Positive Rate: 77.9%
+True Negative Rate: 86.1%
 Classification metrics:
                precision    recall  f1-score   support
-
-           0       0.92      0.95      0.94      4169
-           1       0.67      0.56      0.61       763
-
-    accuracy                           0.89      4932
-   macro avg       0.79      0.75      0.77      4932
-weighted avg       0.88      0.89      0.88      4932
+               
+           0       0.96      0.86      0.91      4169
+           1       0.51      0.78      0.61       763
+           
+    accuracy                           0.85      4932
+   macro avg       0.73      0.82      0.76      4932
+weighted avg       0.89      0.85      0.86      4932
 ```
 
 ### Background
@@ -38,7 +38,8 @@ what web browser they’re using, etc. — the nearest-neighbor classifier will 
 The number of features and nearest-neighbors used (i.e. k-values) were tuned, via cross-validated grid search, to improve the performance of the classifier.
 
 To train the classifier, shopping.csv contains data from a shopping website from about 12,000 users sessions.
-The data set is scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.
+Since the data is imbalanced, Synthetic Minority Oversampling Technique (SMOTE) is used to create oversampled training data.
+The data set is also scaled using statistics that are robust to outliers, thus further improving the model's prediction performance.
 
 Three values are highlighted in the results:
 * accuracy (i.e. the correct predictions)
